@@ -1,0 +1,17 @@
+name: validate-registry
+# PR 到 main 自动验收 index.json(GitHub runner,无需任何执行主机/secret)
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: validate index.json
+        run: node scripts/registry.mjs validate

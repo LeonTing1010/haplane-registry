@@ -9,6 +9,8 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 也可以不装任何工具,直接从 `haps/` 或 Release 下载 `.hap` 自己签。
 
+> 💬 **交流群**:鸿蒙 HAP 签名 / 部署 / 侧载互助 QQ 群 [`897559316`](https://qm.qq.com/q/5UfzodjCsU)(审核制)——装不上、签名卡配额、想收录应用一起投,贴报错一起解。
+
 ## 只收三类(白名单,铁规)
 
 1. **自有产物** —— HapLane 自己的工具与 demo
@@ -16,6 +18,34 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 3. **开发者投稿自有作品** —— 你自己开发的应用,提 PR 挂上来(见下)
 
 **不收**:破解/魔改/去广告包、任何未经授权的第三方应用搬运、闭源且未授权再分发的包。收录的未签名包装机需自行签名——本仓与工具都不破解、不绕过任何签名机制。
+
+## 收录的应用(21 个)
+
+按 `haplane deploy --app <id>` 一条命令装。全部开源、license 白名单、走国内秒开的 Release 附件。
+
+| 分类 | 应用 | id | license | 源 |
+|------|------|-----|---------|-----|
+| 工具 | Linys Browser NEXT | `linysbrowser` | MIT | [源仓](https://github.com/awaLiny2333/LinysBrowser_NEXT) |
+| 工具 | Linys Browser NEXT 1.8.1(兼容 HarmonyOS 6.0.x) | `linysbrowser-1.8.1` | MIT | [源仓](https://github.com/awaLiny2333/LinysBrowser_NEXT) |
+| 工具 | Linys Browser NEXT (OpenHarmony 版) | `linysbrowser-ohos` | MIT | [源仓](https://github.com/awaLiny2333/LinysBrowser_NEXT) |
+| 工具 | Dictionareow 词典 | `dictionareow` | MIT | [源仓](https://github.com/awaLiny2333/Dictionareow) |
+| 工具 | Spaceow 空间分析 | `spaceow` | MIT | [源仓](https://github.com/awaLiny2333/Spaceow_NEXT) |
+| 工具 | LocalSend(隔空投送) | `localsend` | Apache-2.0 | [源仓](https://github.com/Aloereed/localsend-ohos) |
+| 工具 | Homowarden(Bitwarden 密码) | `homowarden` | MIT | [源仓](https://github.com/DreamistW/Homowarden) |
+| 开发 | Harmonix 终端 | `harmonix` | MIT | [源仓](https://github.com/harmoninux/Harmonix) |
+| 开发 | Symbolu 符号浏览器 | `symbolu` | MIT | [源仓](https://github.com/awaLiny2333/Symbolu_NEXT) |
+| 影音 | CloudMusic 第三方网易云 | `cloudmusic` | GPL-2.0 | [源仓](https://github.com/Chenlvin/CloudMusic-HarmonyOSNext) |
+| 影音 | PiliPlus(B 站第三方客户端) | `piliplus` | GPL-3.0 | [源仓](https://github.com/LeonTing1010/PiliPlus) |
+| 影音 | Harmshelf(Audiobookshelf 有声书) | `harmshelf` | GPL-3.0 | [源仓](https://github.com/shanyan-wcx/Audiobookshelf-HarmonyOS) |
+| 影音 | Kazumi(番剧采集观看) | `kazumi` | GPL-3.0 | [源仓](https://github.com/ErBWs/Kazumi) |
+| 影音 | PiliPlusX(B 站第三方客户端 X) | `piliplusx` | GPL-3.0 | [源仓](https://github.com/cnctem/PiliPlusX) |
+| 影音 | Harflix(Emby 播放器) | `harflix` | GPL-3.0 | [源仓](https://github.com/Actrlq/Harflix) |
+| 影音 | Jellyfin(自建影音) | `jellyfin` | GPL-2.0 | [源仓](https://github.com/chashaochang/JellyFin_HarmonyOS) |
+| 阅读 | 京墨(鸿蒙版) | `jingmo` | MIT | [源仓](https://github.com/hefengbao/jingmo-for-HarmonyOS) |
+| 阅读 | S1-Orange(S1 论坛客户端) | `s1orange` | Apache-2.0 | [源仓](https://github.com/wly5556/S1-Orange) |
+| 阅读 | Legado 阅读(开源阅读器) | `legado` | GPL-3.0 | [源仓](https://github.com/mgz0227/legado-Harmony) |
+| 游戏 | Snake 贪吃蛇 | `snake` | MIT | [源仓](https://github.com/awaLiny2333/Snake_NEXT) |
+| 游戏 | MCB(Minecraft Box) | `mcb` | GPL-3.0 | [源仓](https://github.com/lxdklp/MCB_OHOS) |
 
 ## 两个地址,分工
 

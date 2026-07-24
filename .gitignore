@@ -1,0 +1,4 @@
+# >50MB 的 hap 只走 Release 附件,不进 git(Gitee/GitHub 单文件限制)
+haps/Kazumi_ohos_*.hap
+haps/PiliPlusX_ohos_*.hap
+haps/harmonix-*.hap

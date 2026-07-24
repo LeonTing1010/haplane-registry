@@ -326,6 +326,121 @@
         "播放器"
       ],
       "category": "影音"
+    },
+    {
+      "id": "s1orange",
+      "name": "S1-Orange(S1 论坛客户端)",
+      "packageName": "io.github.wly5556.s1orange",
+      "version": "1.4.1",
+      "developer": "wly5556",
+      "license": "Apache-2.0",
+      "source": "https://github.com/wly5556/S1-Orange",
+      "upstreamRelease": "https://github.com/wly5556/S1-Orange/releases",
+      "description": "stage1st(s1)论坛鸿蒙 Next 客户端(minAPI 5.0)。开源,上游自发未签名包,装机自动签。",
+      "keywords": [
+        "论坛",
+        "s1",
+        "stage1st",
+        "社区",
+        "客户端"
+      ],
+      "category": "阅读",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/s1orange-unsigned.hap",
+      "sha256": "ae692a9b758cc18b0196e23c0450a39407debfdca9de81b248c538f83bc79216",
+      "sizeBytes": 6658496
+    },
+    {
+      "id": "harmshelf",
+      "name": "Harmshelf(Audiobookshelf 有声书)",
+      "packageName": "com.shanyan.harmshelf",
+      "version": "2.3.0",
+      "developer": "shanyan-wcx",
+      "license": "GPL-3.0",
+      "source": "https://github.com/shanyan-wcx/Audiobookshelf-HarmonyOS",
+      "upstreamRelease": "https://github.com/shanyan-wcx/Audiobookshelf-HarmonyOS/releases",
+      "description": "Audiobookshelf 有声书/播客服务器的鸿蒙客户端(minAPI 6.0)。开源,上游自发未签名包,装机自动签。",
+      "keywords": [
+        "有声书",
+        "播客",
+        "audiobook",
+        "podcast",
+        "听书"
+      ],
+      "category": "影音",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/harmshelf-2.3.0-unsigned.hap",
+      "sha256": "93a9daf3dbd1122812fd230a7b7c190340507d84e0277f2faceec1d834d7c953",
+      "sizeBytes": 2095793
+    },
+    {
+      "id": "kazumi",
+      "name": "Kazumi(番剧采集观看)",
+      "packageName": "com.predidit.kazumi",
+      "version": "2.2.3",
+      "developer": "Predidit/ErBWs(ohos)",
+      "license": "GPL-3.0",
+      "source": "https://github.com/ErBWs/Kazumi",
+      "upstreamRelease": "https://github.com/ErBWs/Kazumi/releases",
+      "description": "自定义规则采集番剧 + Anime4K 实时超分的在线观看应用(minAPI 6.0)。ErBWs 的 ohos fork 直接发未签名包。80MB 走 Release 附件。",
+      "keywords": [
+        "番剧",
+        "动漫",
+        "anime",
+        "超分",
+        "anime4k",
+        "在线观看",
+        "视频"
+      ],
+      "category": "影音",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/Kazumi_ohos_2.2.3_unsigned.hap",
+      "sha256": "fb938a751dd30372470d94b7400f19613c4f7438844433239315d337ec6ddc94",
+      "sizeBytes": 80006405
+    },
+    {
+      "id": "piliplusx",
+      "name": "PiliPlusX(B 站第三方客户端 X)",
+      "packageName": "com.example.piliplusx",
+      "version": "1.1.5",
+      "developer": "cnctem",
+      "license": "GPL-3.0",
+      "source": "https://github.com/cnctem/PiliPlusX",
+      "upstreamRelease": "https://github.com/cnctem/PiliPlusX/releases",
+      "description": "PiliPlus 的另一分支(minAPI 5.1)。开源 B 站第三方客户端,上游自发未签名包。82MB 走 Release 附件。",
+      "keywords": [
+        "哔哩哔哩",
+        "bilibili",
+        "B站",
+        "视频",
+        "弹幕",
+        "番剧"
+      ],
+      "category": "影音",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/PiliPlusX_ohos_v1.1.3.1_unsigned.hap",
+      "sha256": "0b3a7215f39f5ba2776b1358206f3d80b90584fb5e4e79ba20aae80bc0aaa59a",
+      "sizeBytes": 81788491
     }
   ]
 }

@@ -17,15 +17,29 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 **不收**:破解/魔改/去广告包、任何未经授权的第三方应用搬运、闭源且未授权再分发的包。收录的未签名包装机需自行签名——本仓与工具都不破解、不绕过任何签名机制。
 
-## 投稿(开发者把自己的应用挂上来)
+## 参与贡献(按门槛挑一样)
 
-提一个 PR:
+- **求收录**:想一条命令装某个开源应用?开个 [Issue](https://gitee.com/LeonTing1010/haplane-registry/issues)(有模板),丢应用名和源仓链接就行
+- **投稿但不会 git**:开 Issue 填「投稿」模板,维护者代收录,`developer` 署名归你
+- **投稿(PR,最快)**:
+  1. `.hap` 放进 `haps/`,命名 `<应用id>-<版本>[-变体]-unsigned.hap`(推荐传未签名包,用户装机时本地自动签)
+  2. `node scripts/registry.mjs entry haps/你的.hap` 生成条目模板(自动算 sha256/读包名),补上 id/署名/license/源仓,填进 `index.json`
+  3. `node scripts/registry.mjs validate` 本地全绿后提 PR,按模板勾声明(自己的作品 / license 允许再分发)
+- **报错**:装不上开 Issue 贴完整报错文本
 
-1. `.hap` 放进 `haps/`,命名 `<应用id>-<版本>[-变体]-unsigned.hap`(推荐传未签名包,用户装机时本地自动签)
-2. `index.json` 的 `apps` 里加一条:`id / name / packageName / version / developer / license / source(源码仓) / description / deviceTypes / hap(本仓 raw 直链) / sha256 / sizeBytes`
-3. PR 描述里声明:这是**我自己的作品**或 **license 允许再分发**(写明哪一条)
+单文件 ≤ 50MB 走 `haps/` 目录;大包走 Release 附件,`hap` 字段填 Release 直链。连续高质量投稿会被邀请为仓库维护者。
 
-单文件 ≤ 50MB 走 `haps/` 目录;大包走 Release 附件,`hap` 字段填 Release 直链。
+## 已收录开发者
+
+| 开发者 | 应用 | 来源 |
+|--------|------|------|
+| awaLiny2333 | Linys Browser NEXT(3 个条目) | [GitHub](https://github.com/awaLiny2333/LinysBrowser_NEXT) |
+
+被收录的项目欢迎(完全可选)在 README 贴徽章:
+
+```markdown
+[![haplane registry](https://gitee.com/LeonTing1010/haplane-registry/raw/main/badge.svg)](https://gitee.com/LeonTing1010/haplane-registry)
+```
 
 ## index.json 契约(schema 1)
 

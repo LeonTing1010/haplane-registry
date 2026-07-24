@@ -44,6 +44,10 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 | harmoninux | Harmonix 终端(鸿蒙 PC 跑 Linux ELF) | [GitHub](https://github.com/harmoninux/Harmonix) |
 | Chenlvin | CloudMusic 第三方网易云 | [GitHub](https://github.com/Chenlvin/CloudMusic-HarmonyOSNext) |
 | hefengbao | 京墨(鸿蒙版)诗词文集 | [GitHub](https://github.com/hefengbao/jingmo-for-HarmonyOS) |
+| wly5556 | S1-Orange(S1 论坛客户端) | [GitHub](https://github.com/wly5556/S1-Orange) |
+| shanyan-wcx | Harmshelf(有声书) | [GitHub](https://github.com/shanyan-wcx/Audiobookshelf-HarmonyOS) |
+| Predidit / ErBWs | Kazumi(番剧采集观看) | [GitHub](https://github.com/ErBWs/Kazumi) |
+| cnctem | PiliPlusX(B 站第三方) | [GitHub](https://github.com/cnctem/PiliPlusX) |
 
 被收录的项目欢迎(完全可选)在 README 贴徽章:
 

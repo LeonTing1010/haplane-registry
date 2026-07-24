@@ -60,7 +60,8 @@
         "兼容",
         "6.0"
       ],
-      "category": "工具"
+      "category": "工具",
+      "pinned": true
     },
     {
       "id": "linysbrowser-ohos",

@@ -33,7 +33,10 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 | 开发者 | 应用 | 来源 |
 |--------|------|------|
-| awaLiny2333 | Linys Browser NEXT(3 个条目) | [GitHub](https://github.com/awaLiny2333/LinysBrowser_NEXT) |
+| awaLiny2333 | Linys Browser NEXT ×3 / Dictionareow 词典 / Spaceow 空间分析 / Symbolu 符号浏览器 / Snake 贪吃蛇 | [GitHub](https://github.com/awaLiny2333) |
+| harmoninux | Harmonix 终端(鸿蒙 PC 跑 Linux ELF) | [GitHub](https://github.com/harmoninux/Harmonix) |
+| Chenlvin | CloudMusic 第三方网易云 | [GitHub](https://github.com/Chenlvin/CloudMusic-HarmonyOSNext) |
+| hefengbao | 京墨(鸿蒙版)诗词文集 | [GitHub](https://github.com/hefengbao/jingmo-for-HarmonyOS) |
 
 被收录的项目欢迎(完全可选)在 README 贴徽章:
 

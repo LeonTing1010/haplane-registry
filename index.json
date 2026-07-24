@@ -15,7 +15,11 @@
       "source": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
       "upstreamRelease": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/tag/v2.0.0-beta",
       "description": "开源浏览器(HarmonyOS NEXT 版)。上游作者自发的未签名包,原样收录;装机时 haplane 自动签名。",
-      "deviceTypes": ["phone", "tablet", "2in1"],
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-hmos-unsigned.hap",
       "sha256": "51d1065958a1c49162f28a6c004685eff3a660dae7824fd8fe6a75fa47465cdf",
@@ -31,7 +35,11 @@
       "source": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
       "upstreamRelease": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/tag/v1.8.1-beta",
       "description": "开源浏览器旧版(minAPI 6.0.0/target 6.0.1)。系统低于 6.1 的设备/模拟器装这版;上游自发未签名包,装机时 haplane 自动签名。",
-      "deviceTypes": ["phone", "tablet", "2in1"],
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-1.8.1b-hmos-unsigned.hap",
       "sha256": "ce06c032104781fcc8f4fcb34ba5785ea645582c23ecb5b1d86d2aeb77fd46c9",
@@ -47,11 +55,154 @@
       "source": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
       "upstreamRelease": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/tag/v2.0.0-beta",
       "description": "开源浏览器(OpenHarmony 设备/模拟器版)。上游作者自发的未签名包,原样收录;装机时 haplane 自动签名。",
-      "deviceTypes": ["phone", "tablet", "2in1"],
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-ohos-unsigned.hap",
       "sha256": "7a6bea4c5fe6d257b438bf87fa326606b313d4d9cada85f49fc6c0ef699c00d8",
       "sizeBytes": 2420366
+    },
+    {
+      "id": "harmonix",
+      "name": "Harmonix 终端",
+      "packageName": "hm.hackeris.harmonix",
+      "version": "0.0.11",
+      "developer": "harmoninux",
+      "license": "MIT",
+      "source": "https://github.com/harmoninux/Harmonix",
+      "upstreamRelease": "https://github.com/harmoninux/Harmonix/releases/tag/v0.0.11",
+      "description": "在鸿蒙 PC(2in1)上跑 Linux ELF 的开源终端(minAPI 5.0.5)。上游自发未签名 universal 包,81MB 仅 Release 附件分发。",
+      "deviceTypes": [
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/harmonix-0.0.11-unsigned.hap",
+      "sha256": "3603322725d9e17620b9bb2bef27f0bf1d91af184f26e31c058d4b73fcde32f3",
+      "sizeBytes": 81333889
+    },
+    {
+      "id": "cloudmusic",
+      "name": "CloudMusic 第三方网易云",
+      "packageName": "cc.chenlvin.cloudmusic",
+      "version": "1.4.6",
+      "developer": "Chenlvin",
+      "license": "GPL-2.0",
+      "source": "https://github.com/Chenlvin/CloudMusic-HarmonyOSNext",
+      "upstreamRelease": "https://github.com/Chenlvin/CloudMusic-HarmonyOSNext/releases/tag/v1.4.6",
+      "description": "开源第三方网易云音乐客户端(minAPI 5.0.4)。上游 Release 原样收录(已签包,装机时可重签)。",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": true,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/cloudmusic-1.4.6.hap",
+      "sha256": "72f25de7a5f0fafc39e47d19ec95244f5407068e5a11d3a65d536e01502e83b0",
+      "sizeBytes": 4365444
+    },
+    {
+      "id": "jingmo",
+      "name": "京墨(鸿蒙版)",
+      "packageName": "com.hefengbao.jingmo.hw",
+      "version": "1.2.1",
+      "developer": "hefengbao",
+      "license": "MIT",
+      "source": "https://github.com/hefengbao/jingmo-for-HarmonyOS",
+      "upstreamRelease": "https://github.com/hefengbao/jingmo-for-HarmonyOS/releases/tag/v1.2.1",
+      "description": "开源中华文化诗词文集应用(minAPI 5.1.1)。上游 Release 原样收录。",
+      "deviceTypes": [
+        "phone",
+        "tablet"
+      ],
+      "signed": true,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/jingmo-1.2.1.hap",
+      "sha256": "46c1fddbf4d1f96c4cd7a0be7b47fd206519f2cf4cebc7d0dcdb3e3f12eb9fb4",
+      "sizeBytes": 2601716
+    },
+    {
+      "id": "dictionareow",
+      "name": "Dictionareow 词典",
+      "packageName": "meow.liny.dictionary.meow",
+      "version": "0.1.2",
+      "developer": "awaLiny2333",
+      "license": "MIT",
+      "source": "https://github.com/awaLiny2333/Dictionareow",
+      "upstreamRelease": "https://github.com/awaLiny2333/Dictionareow/releases/tag/0.1.2",
+      "description": "读 MDict 词典库的开源词典(minAPI 6.0.0,全设备型含手表/车机/TV)。上游自发未签名包,装机时自动签。",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1",
+        "car",
+        "wearable",
+        "tv"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/dictionareow-0.1.2-unsigned.hap",
+      "sha256": "64c270ed60ec0b9ac4c2980979ccc5a8d2e6e79360d250d3ba81864ca436d5f4",
+      "sizeBytes": 482225
+    },
+    {
+      "id": "spaceow",
+      "name": "Spaceow 空间分析",
+      "packageName": "com.next.liny.spaceow",
+      "version": "0.0.2",
+      "developer": "awaLiny2333",
+      "license": "MIT",
+      "source": "https://github.com/awaLiny2333/Spaceow_NEXT",
+      "upstreamRelease": "https://github.com/awaLiny2333/Spaceow_NEXT/releases/tag/v0.0.2",
+      "description": "磁盘空间占用分析工具(minAPI 5.0.5,2in1)。上游自发未签名包,装机时自动签。",
+      "deviceTypes": [
+        "2in1",
+        "default"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/spaceow-0.0.2-unsigned.hap",
+      "sha256": "2ffdc2697625ec0432e8559d43e353192eaf56d3585d416b2a83c31b53e081a1",
+      "sizeBytes": 279721
+    },
+    {
+      "id": "symbolu",
+      "name": "Symbolu 符号浏览器",
+      "packageName": "com.next.liny.symbolu",
+      "version": "0.0.1",
+      "developer": "awaLiny2333",
+      "license": "MIT",
+      "source": "https://github.com/awaLiny2333/Symbolu_NEXT",
+      "upstreamRelease": "https://github.com/awaLiny2333/Symbolu_NEXT/releases/tag/v0.0.1",
+      "description": "浏览全部 HarmonyOS Symbol 图标的开源小工具(minAPI 5.0.4)。上游自发未签名包,装机时自动签。",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/symbolu-0.0.1-unsigned.hap",
+      "sha256": "7b22d8aed66696a565ac475b60af14909b600c09211320d53ae0657f9027df37",
+      "sizeBytes": 796189
+    },
+    {
+      "id": "snake",
+      "name": "Snake 贪吃蛇",
+      "packageName": "com.next.liny.snake",
+      "version": "1.0.0",
+      "developer": "awaLiny2333",
+      "license": "MIT",
+      "source": "https://github.com/awaLiny2333/Snake_NEXT",
+      "upstreamRelease": "https://github.com/awaLiny2333/Snake_NEXT/releases/tag/v1.0.0",
+      "description": "经典贪吃蛇小游戏(minAPI 5.0.0)。上游自发未签名包,装机时自动签。",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/snake-1.0.0-unsigned.hap",
+      "sha256": "f579260d8deecd1635c923bfdb02697cc1db0d2cd270580d6aac8a640950f1c5",
+      "sizeBytes": 147218
     }
   ]
 }

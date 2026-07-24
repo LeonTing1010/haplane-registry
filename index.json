@@ -23,7 +23,15 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-hmos-unsigned.hap",
       "sha256": "51d1065958a1c49162f28a6c004685eff3a660dae7824fd8fe6a75fa47465cdf",
-      "sizeBytes": 2373187
+      "sizeBytes": 2373187,
+      "keywords": [
+        "浏览器",
+        "browser",
+        "上网",
+        "网页",
+        "轻量"
+      ],
+      "category": "工具"
     },
     {
       "id": "linysbrowser-1.8.1",
@@ -43,7 +51,16 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-1.8.1b-hmos-unsigned.hap",
       "sha256": "ce06c032104781fcc8f4fcb34ba5785ea645582c23ecb5b1d86d2aeb77fd46c9",
-      "sizeBytes": 6788727
+      "sizeBytes": 6788727,
+      "keywords": [
+        "浏览器",
+        "browser",
+        "上网",
+        "网页",
+        "兼容",
+        "6.0"
+      ],
+      "category": "工具"
     },
     {
       "id": "linysbrowser-ohos",
@@ -63,7 +80,14 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-ohos-unsigned.hap",
       "sha256": "7a6bea4c5fe6d257b438bf87fa326606b313d4d9cada85f49fc6c0ef699c00d8",
-      "sizeBytes": 2420366
+      "sizeBytes": 2420366,
+      "keywords": [
+        "浏览器",
+        "browser",
+        "OpenHarmony",
+        "模拟器"
+      ],
+      "category": "工具"
     },
     {
       "id": "harmonix",
@@ -81,7 +105,19 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/harmonix-0.0.11-unsigned.hap",
       "sha256": "3603322725d9e17620b9bb2bef27f0bf1d91af184f26e31c058d4b73fcde32f3",
-      "sizeBytes": 81333889
+      "sizeBytes": 81333889,
+      "keywords": [
+        "终端",
+        "terminal",
+        "Linux",
+        "ELF",
+        "命令行",
+        "shell",
+        "PC",
+        "2in1",
+        "开发"
+      ],
+      "category": "开发"
     },
     {
       "id": "cloudmusic",
@@ -101,7 +137,16 @@
       "signed": true,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/cloudmusic-1.4.6.hap",
       "sha256": "72f25de7a5f0fafc39e47d19ec95244f5407068e5a11d3a65d536e01502e83b0",
-      "sizeBytes": 4365444
+      "sizeBytes": 4365444,
+      "keywords": [
+        "音乐",
+        "网易云",
+        "netease",
+        "播放器",
+        "歌单",
+        "听歌"
+      ],
+      "category": "影音"
     },
     {
       "id": "jingmo",
@@ -120,7 +165,17 @@
       "signed": true,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/jingmo-1.2.1.hap",
       "sha256": "46c1fddbf4d1f96c4cd7a0be7b47fd206519f2cf4cebc7d0dcdb3e3f12eb9fb4",
-      "sizeBytes": 2601716
+      "sizeBytes": 2601716,
+      "keywords": [
+        "诗词",
+        "古诗",
+        "文集",
+        "古籍",
+        "国学",
+        "文化",
+        "离线"
+      ],
+      "category": "阅读"
     },
     {
       "id": "dictionareow",
@@ -143,7 +198,17 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/dictionareow-0.1.2-unsigned.hap",
       "sha256": "64c270ed60ec0b9ac4c2980979ccc5a8d2e6e79360d250d3ba81864ca436d5f4",
-      "sizeBytes": 482225
+      "sizeBytes": 482225,
+      "keywords": [
+        "词典",
+        "字典",
+        "MDict",
+        "mdx",
+        "查词",
+        "手表",
+        "车机"
+      ],
+      "category": "工具"
     },
     {
       "id": "spaceow",
@@ -162,7 +227,16 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/spaceow-0.0.2-unsigned.hap",
       "sha256": "2ffdc2697625ec0432e8559d43e353192eaf56d3585d416b2a83c31b53e081a1",
-      "sizeBytes": 279721
+      "sizeBytes": 279721,
+      "keywords": [
+        "磁盘",
+        "空间",
+        "存储",
+        "清理",
+        "占用",
+        "分析"
+      ],
+      "category": "工具"
     },
     {
       "id": "symbolu",
@@ -182,7 +256,16 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/symbolu-0.0.1-unsigned.hap",
       "sha256": "7b22d8aed66696a565ac475b60af14909b600c09211320d53ae0657f9027df37",
-      "sizeBytes": 796189
+      "sizeBytes": 796189,
+      "keywords": [
+        "符号",
+        "图标",
+        "Symbol",
+        "设计",
+        "开发",
+        "素材"
+      ],
+      "category": "开发"
     },
     {
       "id": "snake",
@@ -202,7 +285,14 @@
       "signed": false,
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/snake-1.0.0-unsigned.hap",
       "sha256": "f579260d8deecd1635c923bfdb02697cc1db0d2cd270580d6aac8a640950f1c5",
-      "sizeBytes": 147218
+      "sizeBytes": 147218,
+      "keywords": [
+        "游戏",
+        "贪吃蛇",
+        "休闲",
+        "小游戏"
+      ],
+      "category": "游戏"
     },
     {
       "id": "piliplus",
@@ -223,7 +313,18 @@
       "signed": false,
       "hap": "https://github.com/LeonTing1010/PiliPlus/releases/download/2.0.1-ohos-3/PiliPlus_ohos_2.0.1-ohos-3_unsigned.hap",
       "sha256": "da31e540a2ac8b2df9f416340264bcad76e1541641530f2557f9537f703c3c04",
-      "sizeBytes": 135758695
+      "sizeBytes": 135758695,
+      "keywords": [
+        "哔哩哔哩",
+        "bilibili",
+        "B站",
+        "视频",
+        "弹幕",
+        "直播",
+        "番剧",
+        "播放器"
+      ],
+      "category": "影音"
     }
   ]
 }

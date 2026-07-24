@@ -48,6 +48,8 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 `haplane` CLI 与 MCP 工具 `search_hap` 读根目录 `index.json`(Gitee raw,无需鉴权)。字段见上;`sha256` 必填,CLI 下载后强校验。
 
+**为了让 AI/agent 搜得到,强烈建议每条带**:`keywords`(别名+场景词数组,如 `["哔哩哔哩","B站","弹幕","视频"]`——用户不会都用官方名搜)+ `category`(工具/影音/阅读/游戏/开发)+ 两句话 `description`(功能+适用场景)。搜索按 id/名称/包名/描述/keywords/category 子串匹配;`search_hap` 传 `query:"*"` 可列出全仓供 agent 语义挑选。
+
 ## 边界与下架
 
 - 侵权/违规内容:开 Issue 附权属说明,核实即删

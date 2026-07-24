@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "name": "HapLane Registry",
+  "description": "鸿蒙开发者的开源应用仓——只收三类:自有产物 / 开源可再分发 / 开发者投稿自有作品。haplane CLI 可搜可装。",
+  "homepage": "https://gitee.com/LeonTing1010/haplane-registry",
+  "updated": "2026-07-24",
+  "apps": [
+    {
+      "id": "linysbrowser",
+      "name": "Linys Browser NEXT",
+      "packageName": "meow.liny.browser.cat.uwu",
+      "version": "2.0.0-beta",
+      "developer": "awaLiny2333",
+      "license": "MIT",
+      "source": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
+      "upstreamRelease": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/tag/v2.0.0-beta",
+      "description": "开源浏览器(HarmonyOS NEXT 版)。上游作者自发的未签名包,原样收录;装机时 haplane 自动签名。",
+      "deviceTypes": ["phone", "tablet", "2in1"],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/linysbrowser-2.0.0b-hmos-unsigned.hap",
+      "sha256": "51d1065958a1c49162f28a6c004685eff3a660dae7824fd8fe6a75fa47465cdf",
+      "sizeBytes": 2373187
+    },
+    {
+      "id": "linysbrowser-ohos",
+      "name": "Linys Browser NEXT (OpenHarmony 版)",
+      "packageName": "meow.liny.browser.cat.uwu",
+      "version": "2.0.0-beta",
+      "developer": "awaLiny2333",
+      "license": "MIT",
+      "source": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
+      "upstreamRelease": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/tag/v2.0.0-beta",
+      "description": "开源浏览器(OpenHarmony 设备/模拟器版)。上游作者自发的未签名包,原样收录;装机时 haplane 自动签名。",
+      "deviceTypes": ["phone", "tablet", "2in1"],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/linysbrowser-2.0.0b-ohos-unsigned.hap",
+      "sha256": "7a6bea4c5fe6d257b438bf87fa326606b313d4d9cada85f49fc6c0ef699c00d8",
+      "sizeBytes": 2420366
+    }
+  ]
+}

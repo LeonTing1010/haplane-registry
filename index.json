@@ -203,6 +203,27 @@
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/snake-1.0.0-unsigned.hap",
       "sha256": "f579260d8deecd1635c923bfdb02697cc1db0d2cd270580d6aac8a640950f1c5",
       "sizeBytes": 147218
+    },
+    {
+      "id": "piliplus",
+      "name": "PiliPlus(B 站第三方客户端)",
+      "packageName": "com.example.piliplus",
+      "version": "2.0.1",
+      "developer": "PiliPlus 社区(HapLane 可复现构建)",
+      "license": "GPL-3.0",
+      "source": "https://github.com/LeonTing1010/PiliPlus",
+      "upstreamRelease": "https://github.com/LeonTing1010/PiliPlus/releases/tag/2.0.1-ohos-3",
+      "buildProvenance": "https://github.com/LeonTing1010/PiliPlus/actions/runs/30093486835",
+      "description": "开源 B 站第三方客户端(minAPI 5.1)。HapLane 从源码云端可复现构建(公开 CI 日志即凭证,fork 自 qinshah ohos 移植/上游 bggRGjQaUbCoE)。135MB 超 Gitee 附件上限,暂走 GitHub 直链(国内可能偏慢)。未签名包,装机时自动签。",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "signed": false,
+      "hap": "https://github.com/LeonTing1010/PiliPlus/releases/download/2.0.1-ohos-3/PiliPlus_ohos_2.0.1-ohos-3_unsigned.hap",
+      "sha256": "da31e540a2ac8b2df9f416340264bcad76e1541641530f2557f9537f703c3c04",
+      "sizeBytes": 135758695
     }
   ]
 }

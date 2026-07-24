@@ -17,14 +17,21 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 **不收**:破解/魔改/去广告包、任何未经授权的第三方应用搬运、闭源且未授权再分发的包。收录的未签名包装机需自行签名——本仓与工具都不破解、不绕过任何签名机制。
 
+## 两个地址,分工
+
+本仓在 GitHub 与 Gitee 双托管,内容一致:
+
+- **投稿走 GitHub** [github.com/LeonTing1010/haplane-registry](https://github.com/LeonTing1010/haplane-registry) —— 提 PR 后 **GitHub Actions 自动跑格式验收**(sha256/license/包名/字段,零配置),维护者再审「该不该收」后合并
+- **下载/CLI 读 Gitee** [gitee.com/LeonTing1010/haplane-registry](https://gitee.com/LeonTing1010/haplane-registry) —— 国内秒开,`index.json` 与 hap 附件都在这;合并后自动同步过来
+
 ## 参与贡献(按门槛挑一样)
 
-- **求收录**:想一条命令装某个开源应用?开个 [Issue](https://gitee.com/LeonTing1010/haplane-registry/issues)(有模板),丢应用名和源仓链接就行
+- **求收录**:想一条命令装某个开源应用?开个 Issue([GitHub](https://github.com/LeonTing1010/haplane-registry/issues) / [Gitee](https://gitee.com/LeonTing1010/haplane-registry/issues),有模板),丢应用名和源仓链接就行
 - **投稿但不会 git**:开 Issue 填「投稿」模板,维护者代收录,`developer` 署名归你
-- **投稿(PR,最快)**:
+- **投稿(PR,最快)**:向 **GitHub** 提 PR:
   1. `.hap` 放进 `haps/`,命名 `<应用id>-<版本>[-变体]-unsigned.hap`(推荐传未签名包,用户装机时本地自动签)
   2. `node scripts/registry.mjs entry haps/你的.hap` 生成条目模板(自动算 sha256/读包名),补上 id/署名/license/源仓,填进 `index.json`
-  3. `node scripts/registry.mjs validate` 本地全绿后提 PR,按模板勾声明(自己的作品 / license 允许再分发)
+  3. `node scripts/registry.mjs validate` 本地全绿后提 PR;CI 会再验一遍,按模板勾声明(自己的作品 / license 允许再分发)
 - **报错**:装不上开 Issue 贴完整报错文本
 
 单文件 ≤ 50MB 走 `haps/` 目录;大包走 Release 附件,`hap` 字段填 Release 直链。连续高质量投稿会被邀请为仓库维护者。
@@ -54,7 +61,7 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 - 侵权/违规内容:开 Issue 附权属说明,核实即删
 - 本仓只做分发位,不对第三方应用的行为背书;装机自签,风险自担
-- 上游发新版靠 PR/Issue 跟进,不承诺自动同步
+- 上游发新版靠 PR/Issue 跟进 + `registry-watch` 每日自动对比上游 release,有新版自动开 issue
 
 ## License
 

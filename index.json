@@ -22,6 +22,22 @@
       "sizeBytes": 2373187
     },
     {
+      "id": "linysbrowser-1.8.1",
+      "name": "Linys Browser NEXT 1.8.1(兼容 HarmonyOS 6.0.x)",
+      "packageName": "meow.liny.browser.cat.uwu",
+      "version": "1.8.1-beta",
+      "developer": "awaLiny2333",
+      "license": "MIT",
+      "source": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
+      "upstreamRelease": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/tag/v1.8.1-beta",
+      "description": "开源浏览器旧版(minAPI 6.0.0/target 6.0.1)。系统低于 6.1 的设备/模拟器装这版;上游自发未签名包,装机时 haplane 自动签名。",
+      "deviceTypes": ["phone", "tablet", "2in1"],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/linysbrowser-1.8.1b-hmos-unsigned.hap",
+      "sha256": "ce06c032104781fcc8f4fcb34ba5785ea645582c23ecb5b1d86d2aeb77fd46c9",
+      "sizeBytes": 6788727
+    },
+    {
       "id": "linysbrowser-ohos",
       "name": "Linys Browser NEXT (OpenHarmony 版)",
       "packageName": "meow.liny.browser.cat.uwu",

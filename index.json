@@ -441,6 +441,174 @@
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/PiliPlusX_ohos_v1.1.3.1_unsigned.hap",
       "sha256": "0b3a7215f39f5ba2776b1358206f3d80b90584fb5e4e79ba20aae80bc0aaa59a",
       "sizeBytes": 81788491
+    },
+    {
+      "id": "harflix",
+      "name": "Harflix(Emby 播放器)",
+      "packageName": "com.Actrlq.harflix",
+      "version": "1.0.6",
+      "developer": "Actrlq",
+      "license": "GPL-3.0",
+      "source": "https://github.com/Actrlq/Harflix",
+      "upstreamRelease": "https://github.com/Actrlq/Harflix/releases",
+      "description": "Emby 影音服务器的鸿蒙播放器(minAPI 5.0)。开源,上游自发未签名包。",
+      "keywords": [
+        "emby",
+        "影音",
+        "视频",
+        "播放器",
+        "媒体服务器"
+      ],
+      "category": "影音",
+      "deviceTypes": [
+        "phone"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/harflix.hap",
+      "sha256": "f5ec0573878007ebb6ea438539966f05e5d4a0a7bbeee3063967aaa9c89ec9a4",
+      "sizeBytes": 34887116
+    },
+    {
+      "id": "localsend",
+      "name": "LocalSend(隔空投送)",
+      "packageName": "com.aloereed.aloesend",
+      "version": "1.17.2",
+      "developer": "Aloereed",
+      "license": "Apache-2.0",
+      "source": "https://github.com/Aloereed/localsend-ohos",
+      "upstreamRelease": "https://github.com/Aloereed/localsend-ohos/releases",
+      "description": "AirDrop 的开源跨平台替代,局域网互传文件(minAPI 5.0)。上游自发侧载包。",
+      "keywords": [
+        "localsend",
+        "隔空投送",
+        "airdrop",
+        "传文件",
+        "局域网",
+        "互传"
+      ],
+      "category": "工具",
+      "deviceTypes": [
+        "phone",
+        "tablet"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/localsend.hap",
+      "sha256": "d9f5d7402052fef54392d8df1f1f502890f7a3adb671de4fdf8aeae10b5901f5",
+      "sizeBytes": 40088424
+    },
+    {
+      "id": "homowarden",
+      "name": "Homowarden(Bitwarden 密码)",
+      "packageName": "com.dreamist.homowarden",
+      "version": "1.1.5",
+      "developer": "DreamistW",
+      "license": "MIT",
+      "source": "https://github.com/DreamistW/Homowarden",
+      "upstreamRelease": "https://github.com/DreamistW/Homowarden/releases",
+      "description": "跨平台开源密码管理器 Bitwarden 的鸿蒙实现(minAPI 6.1)。上游自发未签名包。",
+      "keywords": [
+        "bitwarden",
+        "密码",
+        "password",
+        "密码管理",
+        "保险箱"
+      ],
+      "category": "工具",
+      "deviceTypes": [
+        "phone"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/homowarden.hap",
+      "sha256": "466197c4ee25a83e8ece06fd91c64db0b51db82f5c26a5536ea62d55397b5400",
+      "sizeBytes": 9851900
+    },
+    {
+      "id": "jellyfin",
+      "name": "Jellyfin(自建影音)",
+      "packageName": "cn.xiaobai.jellyfin",
+      "version": "1.0.4",
+      "developer": "chashaochang",
+      "license": "GPL-2.0",
+      "source": "https://github.com/chashaochang/JellyFin_HarmonyOS",
+      "upstreamRelease": "https://github.com/chashaochang/JellyFin_HarmonyOS/releases",
+      "description": "Jellyfin 自建影音服务器的鸿蒙客户端(minAPI 5.0,含车机)。上游自发未签名包。",
+      "keywords": [
+        "jellyfin",
+        "影音",
+        "视频",
+        "媒体服务器",
+        "自建",
+        "串流"
+      ],
+      "category": "影音",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1",
+        "car"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/jellyfin.hap",
+      "sha256": "4799befd83cedc15a450030c89741896c694c4b6758bd727bcf8aa53a3c5c44a",
+      "sizeBytes": 54310310
+    },
+    {
+      "id": "legado",
+      "name": "Legado 阅读(开源阅读器)",
+      "packageName": "com.legado.app",
+      "version": "1.0.2.4",
+      "developer": "mgz0227",
+      "license": "GPL-3.0",
+      "source": "https://github.com/mgz0227/legado-Harmony",
+      "upstreamRelease": "https://github.com/mgz0227/legado-Harmony/releases",
+      "description": "开源阅读器 Legado(阅读3.0)的鸿蒙版,自定义书源(minAPI 6.0,全设备含手表/TV)。上游自发未签名包。",
+      "keywords": [
+        "阅读",
+        "legado",
+        "阅读器",
+        "小说",
+        "书源",
+        "看书",
+        "电子书"
+      ],
+      "category": "阅读",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "tv",
+        "2in1",
+        "wearable"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/legado.hap",
+      "sha256": "86f6ca0c87be3dd92b7b654ea60a901554366e4cc903605b11e33e37ab77f352",
+      "sizeBytes": 26299578
+    },
+    {
+      "id": "mcb",
+      "name": "MCB(Minecraft Box)",
+      "packageName": "com.mcb.lxdklp.mcb_ohos",
+      "version": "1.2.0",
+      "developer": "lxdklp",
+      "license": "GPL-3.0",
+      "source": "https://github.com/lxdklp/MCB_OHOS",
+      "upstreamRelease": "https://github.com/lxdklp/MCB_OHOS/releases",
+      "description": "Minecraft Box 我的世界工具箱鸿蒙版(minAPI 5.1)。上游自发未签名包。",
+      "keywords": [
+        "minecraft",
+        "我的世界",
+        "mc",
+        "工具箱",
+        "游戏"
+      ],
+      "category": "游戏",
+      "deviceTypes": [
+        "phone"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/mcb.hap",
+      "sha256": "0869917e08a45602553fbf31e8c140d3e9dc23bc50324e204cad8b2ff2fc4828",
+      "sizeBytes": 57459420
     }
   ]
 }

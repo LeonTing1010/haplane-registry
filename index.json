@@ -17,7 +17,7 @@
       "description": "开源浏览器(HarmonyOS NEXT 版)。上游作者自发的未签名包,原样收录;装机时 haplane 自动签名。",
       "deviceTypes": ["phone", "tablet", "2in1"],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/linysbrowser-2.0.0b-hmos-unsigned.hap",
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-hmos-unsigned.hap",
       "sha256": "51d1065958a1c49162f28a6c004685eff3a660dae7824fd8fe6a75fa47465cdf",
       "sizeBytes": 2373187
     },
@@ -33,7 +33,7 @@
       "description": "开源浏览器旧版(minAPI 6.0.0/target 6.0.1)。系统低于 6.1 的设备/模拟器装这版;上游自发未签名包,装机时 haplane 自动签名。",
       "deviceTypes": ["phone", "tablet", "2in1"],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/linysbrowser-1.8.1b-hmos-unsigned.hap",
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-1.8.1b-hmos-unsigned.hap",
       "sha256": "ce06c032104781fcc8f4fcb34ba5785ea645582c23ecb5b1d86d2aeb77fd46c9",
       "sizeBytes": 6788727
     },
@@ -49,7 +49,7 @@
       "description": "开源浏览器(OpenHarmony 设备/模拟器版)。上游作者自发的未签名包,原样收录;装机时 haplane 自动签名。",
       "deviceTypes": ["phone", "tablet", "2in1"],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/linysbrowser-2.0.0b-ohos-unsigned.hap",
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-ohos-unsigned.hap",
       "sha256": "7a6bea4c5fe6d257b438bf87fa326606b313d4d9cada85f49fc6c0ef699c00d8",
       "sizeBytes": 2420366
     }

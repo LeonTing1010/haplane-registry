@@ -52,11 +52,10 @@ function validate() {
     ids.add(a.id)
     if (a.license && !LICENSES.has(a.license)) problems.push(`${tag} license「${a.license}」不在白名单(自有作品写「作者自有」)`)
     if (a.sha256 && !/^[0-9a-f]{64}$/.test(a.sha256)) problems.push(`${tag} sha256 格式不对`)
-    // hap 在本仓 haps/ 里的,做强校验:文件在、sha256 对、大小对、包名一致
-    const m = /\/haps\/([^/?#]+)$/.exec(a.hap || "")
-    if (m) {
+    // 凡本仓 haps/ 里有同名文件的(不论 hap 字段指 raw 还是 Release 直链),做强校验:sha256 对、大小对、包名一致
+    const m = /\/([^/?#]+\.hap)$/.exec(a.hap || "")
+    if (m && existsSync(join(ROOT, "haps", m[1]))) {
       const f = join(ROOT, "haps", m[1])
-      if (!existsSync(f)) { problems.push(`${tag} haps/${m[1]} 不存在`); continue }
       if (statSync(f).size !== a.sizeBytes) problems.push(`${tag} sizeBytes ≠ 实际 ${statSync(f).size}`)
       if (sha256(f) !== a.sha256) problems.push(`${tag} sha256 与文件不符`)
       try {

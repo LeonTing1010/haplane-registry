@@ -1,5 +1,6 @@
 name: intake-投稿
-# 投稿 issue（带「投稿」label）→ 下载 HAP + 机检 license/包名/sha256 → 自动开 PR（供站长过内容关合并）。
+# 投稿 issue（带「投稿」label）→ 拉上游 HAP 到临时目录(仅算 sha256/读包名) + 机检 → 自动开 PR（供站长过内容关合并）。
+# 本仓只索引不托管:HAP 不落 haps/、不进 git;index.json 的 hap 记上游权利人官方直链。
 # 全自动止于开 PR：合并权（内容关）留人工，护城河不丢。
 on:
   issues:
@@ -44,12 +45,18 @@ jobs:
             exit 1
           fi
           echo "id=$ID" >> "$GITHUB_OUTPUT"
-          echo "下载 $URL -> haps/$ID.hap"
-          if ! curl -fL --max-filesize 62914560 -o "haps/$ID.hap" "$URL"; then
-            gh issue comment "$ISSUE" --body "❌ HAP 下载失败或超过 60MB：$URL"
+          # 铁规:直链必须是上游官方位,禁指向本仓(自托管/转存)
+          if echo "$URL" | grep -qiE '(gitee|github)\.com/LeonTing1010/haplane-registry'; then
+            gh issue comment "$ISSUE" --body "❌ HAP 直链指向本仓(自托管/转存)。本仓只索引,请填上游权利人官方发布位直链：$URL"
             exit 1
           fi
-          if ! node scripts/registry.mjs intake --hap "haps/$ID.hap" --from-issue /tmp/body.txt 2> /tmp/err.txt; then
+          # 拉到临时目录:只为算 sha256/读包名做机检,不落 haps/、不进 git
+          echo "拉上游 $URL -> /tmp/$ID.hap (临时,仅机检)"
+          if ! curl -fL --max-filesize 209715200 -o "/tmp/$ID.hap" "$URL"; then
+            gh issue comment "$ISSUE" --body "❌ 上游 HAP 拉取失败或超过 200MB：$URL"
+            exit 1
+          fi
+          if ! node scripts/registry.mjs intake --hap "/tmp/$ID.hap" --from-issue /tmp/body.txt 2> /tmp/err.txt; then
             gh issue comment "$ISSUE" --body "❌ 机检没过：$(cat /tmp/err.txt)"
             exit 1
           fi
@@ -66,10 +73,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           BR="intake/${ID}-${ISSUE}"
           git checkout -b "$BR"
-          git add "haps/${ID}.hap" index.json
+          git add index.json   # 只提交索引,不提交任何二进制(本仓不托管)
           git commit -m "投稿收录 ${ID} (closes #${ISSUE})"
           git push -u origin "$BR" --force   # 分支按 issue 唯一，重跑幂等
           gh pr create --base main --head "$BR" \
             --title "投稿收录 ${ID}" \
-            --body "自动生成自 #${ISSUE}。已机检通过：license 白名单 / HAP 合法 / 包名一致 / sha256+大小核对。**请站长过内容关（非破解 · 非成人 · 有权再分发）后合并。** ⚠ 下载走 gitee raw：合并后须在本地同步 Gitee（fetch github main → push 到 gitee main），否则大陆用户下载 404。"
+            --body "自动生成自 #${ISSUE}。已机检通过：直链非本仓(上游官方位) / license 白名单 / HAP 合法 / 包名一致 / sha256+大小核对。**请站长过内容关（非破解 · 非成人 · 有权再分发）后合并。** 合并后须把 github main 同步到 gitee main（国内读索引）。"
           gh issue comment "$ISSUE" --body "✅ 已机检通过并开好 PR，等站长过内容关合并。合并后即可 npx -y haplane deploy --app ${ID} 安装。"

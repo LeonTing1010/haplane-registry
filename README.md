@@ -1,27 +1,28 @@
-# HapLane Registry · 鸿蒙开源应用仓
+# HapLane Registry · 鸿蒙开源应用索引
 
-给鸿蒙侧载/开发者一个**国内秒开、无登录闸**的开源 HAP 分发位。配合 [haplane CLI](https://gitee.com/LeonTing1010/haplane) 一条命令完成 搜索 → 下载 → 自动签名 → 装机 → 验签:
+给鸿蒙侧载/开发者一个**国内秒开、无登录闸**的开源 HAP **索引**。配合 [haplane CLI](https://gitee.com/LeonTing1010/haplane) 一条命令完成 搜索 → (从上游拉) → 自动签名 → 装机 → 验签:
 
 ```bash
-npx -y haplane search 浏览器            # 搜(本仓 + 其他源)
-npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上你的设备
+npx -y haplane search 浏览器            # 搜(本仓索引 + 其他源)
+npx -y haplane deploy --app linysbrowser   # 从上游官方发布位拉 → sha256 校验 → 自动签名 → 装机
 ```
 
-也可以不装任何工具,直接从 `haps/` 或 Release 下载 `.hap` 自己签。
+> **本仓只索引,不托管任何 HAP 二进制。** 每条 `hap` 是**上游权利人官方发布位的直链**;CLI 代客户端从上游拉取(=用户从权利人处自取)并做 sha256 强校验。上游只发布源码/无直链的条目标 `discoveryOnly`,只给源链接、由你去上游自取。本仓不转存、不镜像、不代下、不绕任何登录闸。
 
 > 💬 **交流群**:鸿蒙 HAP 签名 / 部署 / 侧载互助 QQ 群 [`897559316`](https://qm.qq.com/q/WLH4qmk2sM)(审核制)——装不上、签名卡配额、想收录应用一起投,贴报错一起解。
 
 ## 只收三类(白名单,铁规)
 
 1. **自有产物** —— HapLane 自己的工具与 demo
-2. **开源可再分发** —— license 允许再分发的开源鸿蒙应用(原样收录上游产物,注明源仓与 license)
-3. **开发者投稿自有作品** —— 你自己开发的应用,提 PR 挂上来(见下)
+2. **开源可再分发** —— license 允许再分发的开源鸿蒙应用(**只索引上游官方发布位直链**,注明源仓与 license)
+3. **开发者投稿自有作品** —— 你自己开发的应用,提 PR 把**上游官方直链**挂上来(见下)
 
+**铁规:只收指向权利人官方发布位的直链,禁转存/镜像/网盘/本仓自托管。** `hap` 直链域名不得是本仓(gitee/github 的 `LeonTing1010/haplane-registry`),机器验收会拒。
 **不收**:破解/魔改/去广告包、任何未经授权的第三方应用搬运、闭源且未授权再分发的包。收录的未签名包装机需自行签名——本仓与工具都不破解、不绕过任何签名机制。
 
 ## 收录的应用(21 个)
 
-按 `haplane deploy --app <id>` 一条命令装。全部开源、license 白名单、走国内秒开的 Release 附件。
+按 `haplane deploy --app <id>` 一条命令装(从上游官方发布位拉取)。全部开源、license 白名单。少数上游已删/换发布资产的条目为 `discoveryOnly`(仅索引,去源仓 release 自取)。
 
 | 分类 | 应用 | id | license | 源 |
 |------|------|-----|---------|-----|
@@ -51,20 +52,19 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 本仓在 GitHub 与 Gitee 双托管,内容一致:
 
-- **投稿走 GitHub** [github.com/LeonTing1010/haplane-registry](https://github.com/LeonTing1010/haplane-registry) —— 提 PR 后 **GitHub Actions 自动跑格式验收**(sha256/license/包名/字段,零配置),维护者再审「该不该收」后合并
-- **下载/CLI 读 Gitee** [gitee.com/LeonTing1010/haplane-registry](https://gitee.com/LeonTing1010/haplane-registry) —— 国内秒开,`index.json` 与 hap 附件都在这;合并后自动同步过来
+- **投稿走 GitHub** [github.com/LeonTing1010/haplane-registry](https://github.com/LeonTing1010/haplane-registry) —— 提 PR 后 **GitHub Actions 自动跑格式验收**(直链非自托管/license/upstreamRelease/字段,零配置),维护者再审「该不该收」后合并
+- **索引/CLI 读 Gitee** [gitee.com/LeonTing1010/haplane-registry](https://gitee.com/LeonTing1010/haplane-registry) —— 国内秒开,**只有 `index.json`(索引),不放任何 HAP 二进制**;hap 是上游官方直链;合并后自动同步过来
 
 ## 参与贡献(按门槛挑一样)
 
-- **投稿(最省事,推荐)**:开 [GitHub Issue → 选「投稿开源鸿蒙应用」模板](https://github.com/LeonTing1010/haplane-registry/issues/new/choose),填 应用ID / HAP直链 / 源仓 / license / 署名 → **机器人自动下载 HAP、跑机检(license 白名单 / 包名 / sha256)、开好 PR**;维护者过内容关(非破解 / 非成人)后合并,合并即上站。你只填个表单,不碰 git
-- **求收录别人的开源应用**:同样开「投稿」模板,`developer` 署名填上游作者
-- **投稿(PR,最快)**:向 **GitHub** 提 PR:
-  1. `.hap` 放进 `haps/`,命名 `<应用id>-<版本>[-变体]-unsigned.hap`(推荐传未签名包,用户装机时本地自动签)
-  2. `node scripts/registry.mjs entry haps/你的.hap` 生成条目模板(自动算 sha256/读包名),补上 id/署名/license/源仓,填进 `index.json`
-  3. `node scripts/registry.mjs validate` 本地全绿后提 PR;CI 会再验一遍,按模板勾声明(自己的作品 / license 允许再分发)
-- **报错**:装不上开 Issue 贴完整报错文本
+- **投稿(最省事,推荐)**:开 [GitHub Issue → 选「投稿开源鸿蒙应用」模板](https://github.com/LeonTing1010/haplane-registry/issues/new/choose),填 应用ID / **上游官方 HAP 直链** / 源仓 / license / 署名 → **机器人拉上游包算 sha256、跑机检(直链非本仓 / license 白名单 / 包名 / upstreamRelease)、开好 PR**;维护者过内容关(非破解 / 非成人)后合并,合并即上站。你只填个表单,不碰 git
+- **求收录别人的开源应用**:同样开「投稿」模板,`developer` 署名填上游作者,直链填该作者官方 release 资产
+- **投稿(PR,最快)**:向 **GitHub** 提 PR,**只改 `index.json`,不上传任何二进制**:
+  1. 拿到上游官方 release 里的 `.hap` 直链(权利人自己发布位;本仓不托管二进制)
+  2. `node scripts/registry.mjs entry <本地下载的.hap>` 生成条目模板(算 sha256/读包名),把 `hap` 填成**上游直链**、补 `upstreamRelease`/id/署名/license/源仓,填进 `index.json`
+  3. `node scripts/registry.mjs validate` 本地全绿后提 PR;CI 会再验一遍,按模板勾声明(自己的作品 / license 允许再分发 / 直链是上游官方位)
 
-单文件 ≤ 50MB 走 `haps/` 目录;大包走 Release 附件,`hap` 字段填 Release 直链。连续高质量投稿会被邀请为仓库维护者。
+**投稿铁规**:`hap` 必须是上游权利人官方发布位直链;上游只有源码无直链的,删 `hap` 字段、加 `"discoveryOnly": true`(仅索引)。连续高质量投稿会被邀请为仓库维护者。
 
 ## 已收录开发者
 
@@ -87,14 +87,14 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 ## index.json 契约(schema 1)
 
-`haplane` CLI 与 MCP 工具 `search_hap` 读根目录 `index.json`(Gitee raw,无需鉴权)。字段见上;`sha256` 必填,CLI 下载后强校验。
+`haplane` CLI 与 MCP 工具 `search_hap` 读根目录 `index.json`(Gitee raw,无需鉴权)。**`upstreamRelease` 必填**(溯源+发现落点);可下载条目 `hap`=上游官方直链 + `sha256`/`sizeBytes`(CLI 从上游拉后强校验);仅索引条目 `hap: null` + `"discoveryOnly": true`。**`hap` 直链不得指向本仓**(机器验收硬拒)。
 
 **为了让 AI/agent 搜得到,强烈建议每条带**:`keywords`(别名+场景词数组,如 `["哔哩哔哩","B站","弹幕","视频"]`——用户不会都用官方名搜)+ `category`(工具/影音/阅读/游戏/开发)+ 两句话 `description`(功能+适用场景)。搜索按 id/名称/包名/描述/keywords/category 子串匹配;`search_hap` 传 `query:"*"` 可列出全仓供 agent 语义挑选。
 
 ## 边界与下架
 
-- 侵权/违规内容:开 Issue 附权属说明,核实即删
-- 本仓只做分发位,不对第三方应用的行为背书;装机自签,风险自担
+- 侵权/违规内容:开 Issue 附权属说明,核实即删索引条目(本仓不托管二进制,删条目即断开索引)
+- 本仓只做**索引位**,不托管/不转存二进制、不对第三方应用的行为背书;装机自签,风险自担
 - 上游发新版靠 PR/Issue 跟进 + `registry-watch` 每日自动对比上游 release,有新版自动开 issue
 
 ## License

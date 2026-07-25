@@ -1,4 +1,3 @@
-# >50MB 的 hap 只走 Release 附件,不进 git(Gitee/GitHub 单文件限制)
-haps/Kazumi_ohos_*.hap
-haps/PiliPlusX_ohos_*.hap
-haps/harmonix-*.hap
+# 本仓只索引不托管:任何 HAP 二进制都不进 git。
+# hap 直链一律指向上游权利人官方发布位;本地 haps/ 仅作机检临时料,不提交。
+haps/

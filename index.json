@@ -3,7 +3,7 @@
   "name": "HapLane Registry",
   "description": "鸿蒙开发者的开源应用仓——只收三类:自有产物 / 开源可再分发 / 开发者投稿自有作品。haplane CLI 可搜可装。",
   "homepage": "https://gitee.com/LeonTing1010/haplane-registry",
-  "updated": "2026-07-24",
+  "updated": "2026-07-25",
   "apps": [
     {
       "id": "linysbrowser",
@@ -21,7 +21,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-hmos-unsigned.hap",
+      "hap": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/download/v2.0.0-beta/HMOS-release-home-default-unsigned.hap",
       "sha256": "51d1065958a1c49162f28a6c004685eff3a660dae7824fd8fe6a75fa47465cdf",
       "sizeBytes": 2373187,
       "keywords": [
@@ -49,7 +49,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-1.8.1b-hmos-unsigned.hap",
+      "hap": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/download/v1.8.1-beta/HMOS-home-default-unsigned.hap",
       "sha256": "ce06c032104781fcc8f4fcb34ba5785ea645582c23ecb5b1d86d2aeb77fd46c9",
       "sizeBytes": 6788727,
       "keywords": [
@@ -79,7 +79,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/linysbrowser-2.0.0b-ohos-unsigned.hap",
+      "hap": "https://github.com/awaLiny2333/LinysBrowser_NEXT/releases/download/v2.0.0-beta/OHOS-release-home-default-unsigned.hap",
       "sha256": "7a6bea4c5fe6d257b438bf87fa326606b313d4d9cada85f49fc6c0ef699c00d8",
       "sizeBytes": 2420366,
       "keywords": [
@@ -104,7 +104,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/harmonix-0.0.11-unsigned.hap",
+      "hap": "https://github.com/harmoninux/Harmonix/releases/download/v0.0.11/entry-default-unsigned-universal.hap",
       "sha256": "3603322725d9e17620b9bb2bef27f0bf1d91af184f26e31c058d4b73fcde32f3",
       "sizeBytes": 81333889,
       "keywords": [
@@ -136,7 +136,7 @@
         "2in1"
       ],
       "signed": true,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/cloudmusic-1.4.6.hap",
+      "hap": null,
       "sha256": "72f25de7a5f0fafc39e47d19ec95244f5407068e5a11d3a65d536e01502e83b0",
       "sizeBytes": 4365444,
       "keywords": [
@@ -147,7 +147,8 @@
         "歌单",
         "听歌"
       ],
-      "category": "影音"
+      "category": "影音",
+      "discoveryOnly": true
     },
     {
       "id": "jingmo",
@@ -164,7 +165,7 @@
         "tablet"
       ],
       "signed": true,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/jingmo-1.2.1.hap",
+      "hap": "https://github.com/hefengbao/jingmo-for-HarmonyOS/releases/download/v1.2.1/jingmo-1.2.1.hap",
       "sha256": "46c1fddbf4d1f96c4cd7a0be7b47fd206519f2cf4cebc7d0dcdb3e3f12eb9fb4",
       "sizeBytes": 2601716,
       "keywords": [
@@ -197,7 +198,7 @@
         "tv"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/dictionareow-0.1.2-unsigned.hap",
+      "hap": "https://github.com/awaLiny2333/Dictionareow/releases/download/0.1.2/meow-default-unsigned.hap",
       "sha256": "64c270ed60ec0b9ac4c2980979ccc5a8d2e6e79360d250d3ba81864ca436d5f4",
       "sizeBytes": 482225,
       "keywords": [
@@ -226,7 +227,7 @@
         "default"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/spaceow-0.0.2-unsigned.hap",
+      "hap": "https://github.com/awaLiny2333/Spaceow_NEXT/releases/download/v0.0.2/HMOS-entry-default-unsigned.hap",
       "sha256": "2ffdc2697625ec0432e8559d43e353192eaf56d3585d416b2a83c31b53e081a1",
       "sizeBytes": 279721,
       "keywords": [
@@ -255,7 +256,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/symbolu-0.0.1-unsigned.hap",
+      "hap": "https://github.com/awaLiny2333/Symbolu_NEXT/releases/download/v0.0.1/entry-default-unsigned.hap",
       "sha256": "7b22d8aed66696a565ac475b60af14909b600c09211320d53ae0657f9027df37",
       "sizeBytes": 796189,
       "keywords": [
@@ -284,7 +285,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/snake-1.0.0-unsigned.hap",
+      "hap": null,
       "sha256": "f579260d8deecd1635c923bfdb02697cc1db0d2cd270580d6aac8a640950f1c5",
       "sizeBytes": 147218,
       "keywords": [
@@ -293,7 +294,8 @@
         "休闲",
         "小游戏"
       ],
-      "category": "游戏"
+      "category": "游戏",
+      "discoveryOnly": true
     },
     {
       "id": "piliplus",
@@ -351,7 +353,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/s1orange-unsigned.hap",
+      "hap": "https://github.com/wly5556/S1-Orange/releases/download/v1.4.1/S1-Orange-unsigned.hap",
       "sha256": "ae692a9b758cc18b0196e23c0450a39407debfdca9de81b248c538f83bc79216",
       "sizeBytes": 6658496
     },
@@ -379,7 +381,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/harmshelf-2.3.0-unsigned.hap",
+      "hap": "https://github.com/shanyan-wcx/Harmshelf/releases/download/v2.3.0/Harmshelf-v2.3.0-unsigned.hap",
       "sha256": "93a9daf3dbd1122812fd230a7b7c190340507d84e0277f2faceec1d834d7c953",
       "sizeBytes": 2095793
     },
@@ -409,7 +411,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/Kazumi_ohos_2.2.3_unsigned.hap",
+      "hap": "https://github.com/ErBWs/Kazumi/releases/download/2.2.3/Kazumi_ohos_2.2.3_unsigned.hap",
       "sha256": "fb938a751dd30372470d94b7400f19613c4f7438844433239315d337ec6ddc94",
       "sizeBytes": 80006405
     },
@@ -438,7 +440,7 @@
         "2in1"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/PiliPlusX_ohos_v1.1.3.1_unsigned.hap",
+      "hap": "https://github.com/cnctem/PiliPlusX/releases/download/v1.1.3.1/PiliPlusX_ohos_v1.1.3.1_unsigned.hap",
       "sha256": "0b3a7215f39f5ba2776b1358206f3d80b90584fb5e4e79ba20aae80bc0aaa59a",
       "sizeBytes": 81788491
     },
@@ -464,7 +466,7 @@
         "phone"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/harflix.hap",
+      "hap": "https://github.com/Actrlq/Harflix/releases/download/V1.0.6/Harflix-V1.0.6-unsigned.hap",
       "sha256": "f5ec0573878007ebb6ea438539966f05e5d4a0a7bbeee3063967aaa9c89ec9a4",
       "sizeBytes": 34887116
     },
@@ -492,9 +494,10 @@
         "tablet"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/localsend.hap",
+      "hap": null,
       "sha256": "d9f5d7402052fef54392d8df1f1f502890f7a3adb671de4fdf8aeae10b5901f5",
-      "sizeBytes": 40088424
+      "sizeBytes": 40088424,
+      "discoveryOnly": true
     },
     {
       "id": "homowarden",
@@ -518,7 +521,7 @@
         "phone"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/homowarden.hap",
+      "hap": "https://github.com/DreamistW/Homowarden/releases/download/1.1.5/entry-default-unsigned.hap",
       "sha256": "466197c4ee25a83e8ece06fd91c64db0b51db82f5c26a5536ea62d55397b5400",
       "sizeBytes": 9851900
     },
@@ -548,7 +551,7 @@
         "car"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/jellyfin.hap",
+      "hap": "https://github.com/chashaochang/JellyFin_HarmonyOS/releases/download/v1.0.4/jellyfin_v1.0.4_unsigned.hap",
       "sha256": "4799befd83cedc15a450030c89741896c694c4b6758bd727bcf8aa53a3c5c44a",
       "sizeBytes": 54310310
     },
@@ -580,7 +583,7 @@
         "wearable"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/legado.hap",
+      "hap": "https://github.com/mgz0227/legado-Harmony/releases/download/V1.0.2.4/Legado-V1.0.2.4-260311-unsigned.hap",
       "sha256": "86f6ca0c87be3dd92b7b654ea60a901554366e4cc903605b11e33e37ab77f352",
       "sizeBytes": 26299578
     },
@@ -606,9 +609,10 @@
         "phone"
       ],
       "signed": false,
-      "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/mcb.hap",
+      "hap": "https://github.com/lxdklp/MCB_OHOS/releases/download/v1.2.0/entry-default-unsigned.hap",
       "sha256": "0869917e08a45602553fbf31e8c140d3e9dc23bc50324e204cad8b2ff2fc4828",
       "sizeBytes": 57459420
     }
-  ]
+  ],
+  "policy": "本仓只索引,不托管/不转存任何 HAP。hap 字段为上游权利人官方发布位直链(可为 null→仅索引,去 upstreamRelease 自取)。"
 }

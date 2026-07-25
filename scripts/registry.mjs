@@ -84,7 +84,7 @@ function entry(hapPath) {
     description: "<一句话说明;标注适用系统(minAPI " + (mod?.app?.minAPIVersion || "?") + ")>",
     deviceTypes: mod?.module?.deviceTypes || ["phone"],
     signed: false,
-    hap: `https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/${basename(f)}`,
+    hap: `https://cdn.jsdelivr.net/gh/LeonTing1010/haplane-registry@main/haps/${basename(f)}`,
     sha256: sha256(f),
     sizeBytes: statSync(f).size,
   }
@@ -140,7 +140,7 @@ function intake(hapPath, bodyFile) {
     version: mod?.app?.versionName || "", developer: F.developer, license: F.license,
     source: F.source, description: F.description,
     deviceTypes: mod?.module?.deviceTypes || ["phone"], signed: false,
-    hap: `https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/${basename(f)}`,
+    hap: `https://cdn.jsdelivr.net/gh/LeonTing1010/haplane-registry@main/haps/${basename(f)}`,
     sha256: sha256(f), sizeBytes: statSync(f).size,
   }
   if (F.keywords) e.keywords = F.keywords.split(/[,，]/).map(s => s.trim()).filter(Boolean)

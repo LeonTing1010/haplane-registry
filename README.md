@@ -9,7 +9,7 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 也可以不装任何工具,直接从 `haps/` 或 Release 下载 `.hap` 自己签。
 
-> 💬 **交流群**:鸿蒙 HAP 签名 / 部署 / 侧载互助 QQ 群 [`897559316`](https://qm.qq.com/q/5UfzodjCsU)(审核制)——装不上、签名卡配额、想收录应用一起投,贴报错一起解。
+> 💬 **交流群**:鸿蒙 HAP 签名 / 部署 / 侧载互助 QQ 群 [`897559316`](https://qm.qq.com/q/WLH4qmk2sM)(审核制)——装不上、签名卡配额、想收录应用一起投,贴报错一起解。
 
 ## 只收三类(白名单,铁规)
 
@@ -56,8 +56,8 @@ npx -y haplane deploy --app linysbrowser   # 下载 → 自动签名 → 装上�
 
 ## 参与贡献(按门槛挑一样)
 
-- **求收录**:想一条命令装某个开源应用?开个 Issue([GitHub](https://github.com/LeonTing1010/haplane-registry/issues) / [Gitee](https://gitee.com/LeonTing1010/haplane-registry/issues),有模板),丢应用名和源仓链接就行
-- **投稿但不会 git**:开 Issue 填「投稿」模板,维护者代收录,`developer` 署名归你
+- **投稿(最省事,推荐)**:开 [GitHub Issue → 选「投稿开源鸿蒙应用」模板](https://github.com/LeonTing1010/haplane-registry/issues/new/choose),填 应用ID / HAP直链 / 源仓 / license / 署名 → **机器人自动下载 HAP、跑机检(license 白名单 / 包名 / sha256)、开好 PR**;维护者过内容关(非破解 / 非成人)后合并,合并即上站。你只填个表单,不碰 git
+- **求收录别人的开源应用**:同样开「投稿」模板,`developer` 署名填上游作者
 - **投稿(PR,最快)**:向 **GitHub** 提 PR:
   1. `.hap` 放进 `haps/`,命名 `<应用id>-<版本>[-变体]-unsigned.hap`(推荐传未签名包,用户装机时本地自动签)
   2. `node scripts/registry.mjs entry haps/你的.hap` 生成条目模板(自动算 sha256/读包名),补上 id/署名/license/源仓,填进 `index.json`

@@ -1,0 +1,97 @@
+name: 投稿开源鸿蒙应用
+description: 提交一个开源 / 作者自有的鸿蒙 HAP，机检通过后由站长过内容关合并，合并即上站。
+title: "[投稿] "
+labels: ["投稿"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **只收开源或作者自有作品，绝不收破解 / 魔改 / 成人内容。**
+        提交后机器人会自动下载 HAP、校验 license/包名、开一个 PR；站长过内容关后合并，合并即出现在
+        [应用市场](https://leonting1010.github.io/haplane/#apps)。
+  - type: input
+    id: appid
+    attributes:
+      label: 应用 ID
+      description: 小写字母 / 数字 / 短横线，全局唯一（如 linysbrowser）。多版本用后缀（如 foo-1.8）。
+      placeholder: my-app
+    validations:
+      required: true
+  - type: input
+    id: hapurl
+    attributes:
+      label: HAP 直链
+      description: 能直接下载 .hap 的 URL，GitHub / Gitee Release 直链最佳（≤ 60MB）。
+      placeholder: https://github.com/you/app/releases/download/v1/app.hap
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 源码仓库
+      description: 开源仓库地址（http/https）。
+      placeholder: https://github.com/you/app
+    validations:
+      required: true
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      options:
+        - MIT
+        - Apache-2.0
+        - GPL-2.0
+        - GPL-3.0
+        - LGPL-2.1
+        - LGPL-3.0
+        - AGPL-3.0
+        - BSD-2-Clause
+        - BSD-3-Clause
+        - MPL-2.0
+        - EPL-2.0
+        - ISC
+        - Unlicense
+        - CC0-1.0
+        - MulanPSL-2.0
+        - 作者自有
+    validations:
+      required: true
+  - type: input
+    id: developer
+    attributes:
+      label: 署名（开发者）
+      description: 收录条目里显示的作者署名。
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: 一句话描述
+      description: 说清是什么 + 适用系统（如 minAPI 6.0）。
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: 分类
+      placeholder: 工具 / 影视 / 阅读 / 音乐 / 游戏 …
+  - type: input
+    id: keywords
+    attributes:
+      label: 关键词
+      description: 逗号分隔，用于站内搜索。
+      placeholder: 浏览器, browser, 上网
+  - type: input
+    id: name
+    attributes:
+      label: 应用名
+      description: 可留空，默认读 HAP 内的 label。
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认（缺一不可）
+      options:
+        - label: 这是开源或我自己的作品，不是破解 / 魔改包
+          required: true
+        - label: 不含成人 / 违法内容，且我有权再分发
+          required: true

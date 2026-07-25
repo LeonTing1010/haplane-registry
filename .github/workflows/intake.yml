@@ -1,0 +1,71 @@
+name: intake-投稿
+# 投稿 issue（带「投稿」label）→ 下载 HAP + 机检 license/包名/sha256 → 自动开 PR（供站长过内容关合并）。
+# 全自动止于开 PR：合并权（内容关）留人工，护城河不丢。
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  intake:
+    if: contains(github.event.issue.labels.*.name, '投稿')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 解析表单 + 下载 HAP + 机检建条目
+        id: build
+        env:
+          BODY: ${{ github.event.issue.body }}
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          set -eo pipefail
+          printf '%s' "$BODY" > /tmp/body.txt
+          ID=$(node scripts/registry.mjs field /tmp/body.txt "应用 ID")
+          URL=$(node scripts/registry.mjs field /tmp/body.txt "HAP 直链")
+          if ! [[ "$ID" =~ ^[a-z0-9][a-z0-9-]+$ ]]; then
+            gh issue comment "$ISSUE" --body "❌ 应用 ID「$ID」非法：只能小写字母/数字/短横线。改好后重新提交。"
+            exit 1
+          fi
+          if ! [[ "$URL" =~ ^https?:// ]]; then
+            gh issue comment "$ISSUE" --body "❌ HAP 直链不是 http(s) 链接：$URL"
+            exit 1
+          fi
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "下载 $URL -> haps/$ID.hap"
+          if ! curl -fL --max-filesize 62914560 -o "haps/$ID.hap" "$URL"; then
+            gh issue comment "$ISSUE" --body "❌ HAP 下载失败或超过 60MB：$URL"
+            exit 1
+          fi
+          if ! node scripts/registry.mjs intake --hap "haps/$ID.hap" --from-issue /tmp/body.txt 2> /tmp/err.txt; then
+            gh issue comment "$ISSUE" --body "❌ 机检没过：$(cat /tmp/err.txt)"
+            exit 1
+          fi
+
+      - name: 开 PR（供人工过内容关）
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          ID: ${{ steps.build.outputs.id }}
+        run: |
+          set -eo pipefail
+          git config user.name "haplane-intake[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BR="intake/${ID}-${ISSUE}"
+          git checkout -b "$BR"
+          git add "haps/${ID}.hap" index.json
+          git commit -m "投稿收录 ${ID} (closes #${ISSUE})"
+          git push -u origin "$BR"
+          gh pr create --base main --head "$BR" \
+            --title "投稿收录 ${ID}" \
+            --body "自动生成自 #${ISSUE}。已机检通过：license 白名单 / HAP 合法 / 包名一致 / sha256+大小核对。**请站长过内容关（非破解 · 非成人 · 有权再分发）后合并；合并即上站。**"
+          gh issue comment "$ISSUE" --body "✅ 已机检通过并开好 PR，等站长过内容关合并。合并后即可 npx -y haplane deploy --app ${ID} 安装。"

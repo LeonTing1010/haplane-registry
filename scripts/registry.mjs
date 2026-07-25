@@ -4,7 +4,7 @@
 //   node scripts/registry.mjs entry <hap路径>      读 hap 生成 index.json 条目模板(投稿小抄)
 // 验收标准即代码:字段齐全/ id 唯一/ license 在白名单/ 本地 hap 的 sha256·大小·包名与条目一致。
 
-import { readFileSync, existsSync, statSync } from "node:fs"
+import { readFileSync, writeFileSync, existsSync, statSync } from "node:fs"
 import { createHash } from "node:crypto"
 import { inflateRawSync } from "node:zlib"
 import { resolve, basename, dirname, join } from "node:path"
@@ -91,7 +91,76 @@ function entry(hapPath) {
   console.log(JSON.stringify(tpl, null, 2))
 }
 
-const [cmd, arg] = process.argv.slice(2)
+// ---- 投稿 intake：解析 issue 表单 → 建条目 → 落 index.json（半自动，产出供人工过审的 PR）----
+// issue 表单 ### 标题 → 内部字段（标题须与 .github/ISSUE_TEMPLATE/投稿.yml 的 label 逐字一致）
+const ISSUE_FIELDS = {
+  "应用 ID": "id", "License": "license", "源码仓库": "source",
+  "署名（开发者）": "developer", "一句话描述": "description",
+  "分类": "category", "关键词": "keywords", "应用名": "name", "HAP 直链": "hapUrl",
+}
+// GitHub issue form 渲染成 "### 标题\n\n值\n\n### 标题2\n\n值2"
+function parseIssue(body) {
+  const out = {}
+  for (const b of body.split(/^###\s+/m).slice(1)) {
+    const nl = b.indexOf("\n")
+    const label = (nl < 0 ? b : b.slice(0, nl)).trim()
+    let val = (nl < 0 ? "" : b.slice(nl + 1)).trim()
+    if (val === "_No response_" || val === "_无回应_") val = ""
+    out[label] = val
+  }
+  return out
+}
+function fieldCmd(bodyFile, label) {
+  process.stdout.write(parseIssue(readFileSync(bodyFile, "utf8"))[label] || "")
+}
+function intake(hapPath, bodyFile) {
+  const raw = parseIssue(readFileSync(bodyFile, "utf8"))
+  const F = {}
+  for (const [label, key] of Object.entries(ISSUE_FIELDS)) F[key] = raw[label] || ""
+  const fail = (m) => { console.error("✗ " + m); process.exit(1) }
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(F.id)) fail(`应用 ID「${F.id}」非法：只能小写字母/数字/短横线`)
+  if (!LICENSES.has(F.license)) fail(`license「${F.license}」不在白名单（自有作品填「作者自有」）`)
+  if (!/^https?:\/\//.test(F.source)) fail("源码仓库需是 http(s) 链接")
+  if (!F.developer) fail("缺署名（开发者）")
+  if (!F.description) fail("缺一句话描述")
+  const idxPath = join(ROOT, "index.json")
+  const idx = JSON.parse(readFileSync(idxPath, "utf8"))
+  if ((idx.apps || []).some(a => a.id === F.id)) fail(`id「${F.id}」已存在，换个 id 或加版本后缀`)
+  const f = resolve(hapPath)
+  if (!existsSync(f)) fail(`HAP 未下载到: ${f}`)
+  let mod
+  try { mod = readModule(f) } catch (e) { fail(`不是合法 HAP（读不到 module.json）: ${e.message}`) }
+  const bn = mod?.app?.bundleName
+  if (!bn) fail("HAP 内读不到 bundleName")
+  // HAP 的 label 常是资源引用（$string:app_name），解析不出真名 → 要求投稿人填「应用名」
+  const name = F.name || mod?.app?.label || ""
+  if (!name || name.startsWith("$")) fail("读不到应用名（HAP label 是资源引用 $string:…），请在表单『应用名』里填真实名称")
+  const e = {
+    id: F.id, name, packageName: bn,
+    version: mod?.app?.versionName || "", developer: F.developer, license: F.license,
+    source: F.source, description: F.description,
+    deviceTypes: mod?.module?.deviceTypes || ["phone"], signed: false,
+    hap: `https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/${basename(f)}`,
+    sha256: sha256(f), sizeBytes: statSync(f).size,
+  }
+  if (F.keywords) e.keywords = F.keywords.split(/[,，]/).map(s => s.trim()).filter(Boolean)
+  if (F.category) e.category = F.category
+  idx.apps.push(e)
+  idx.updated = new Date().toISOString().slice(0, 10)
+  writeFileSync(idxPath, JSON.stringify(idx, null, 2) + "\n")
+  console.log(`✓ 已追加 [${e.id}] ${e.name} @ ${e.version}（${e.packageName}） license=${e.license} ${e.sizeBytes}B`)
+  validate()  // 整体复验（会强校验刚下载进 haps/ 的文件：sha256/大小/包名）
+}
+
+const args = process.argv.slice(2)
+const cmd = args[0]
+const flag = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : undefined }
 if (cmd === "validate") validate()
-else if (cmd === "entry" && arg) entry(arg)
-else { console.log("用法:\n  node scripts/registry.mjs validate\n  node scripts/registry.mjs entry <hap路径>"); process.exit(cmd ? 1 : 0) }
+else if (cmd === "entry" && args[1]) entry(args[1])
+else if (cmd === "field" && args[1] && args[2]) fieldCmd(args[1], args[2])
+else if (cmd === "intake") {
+  const hap = flag("--hap"), body = flag("--from-issue")
+  if (!hap || !body) { console.error("用法: intake --hap <path> --from-issue <bodyfile>"); process.exit(1) }
+  intake(hap, body)
+}
+else { console.log("用法:\n  validate\n  entry <hap路径>\n  intake --hap <path> --from-issue <bodyfile>\n  field <bodyfile> <标题>"); process.exit(cmd ? 1 : 0) }

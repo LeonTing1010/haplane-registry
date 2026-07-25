@@ -3,7 +3,7 @@
   "name": "HapLane Registry",
   "description": "鸿蒙开发者的开源应用仓——只收三类:自有产物 / 开源可再分发 / 开发者投稿自有作品。haplane CLI 可搜可装。",
   "homepage": "https://gitee.com/LeonTing1010/haplane-registry",
-  "updated": "2026-07-24",
+  "updated": "2026-07-25",
   "apps": [
     {
       "id": "linysbrowser",
@@ -609,6 +609,30 @@
       "hap": "https://gitee.com/LeonTing1010/haplane-registry/releases/download/haps-v1/mcb.hap",
       "sha256": "0869917e08a45602553fbf31e8c140d3e9dc23bc50324e204cad8b2ff2fc4828",
       "sizeBytes": 57459420
+    },
+    {
+      "id": "e2e-test-jingmo",
+      "name": "京墨(端到端测试)",
+      "packageName": "com.hefengbao.jingmo.hw",
+      "version": "1.2.1",
+      "developer": "hefengbao",
+      "license": "MIT",
+      "source": "https://github.com/hefengbao/jingmo-for-HarmonyOS",
+      "description": "端到端测试条目——诗词文集鸿蒙版（验证 intake 管线，验完即关，勿合并）。",
+      "deviceTypes": [
+        "phone",
+        "tablet"
+      ],
+      "signed": false,
+      "hap": "https://gitee.com/LeonTing1010/haplane-registry/raw/main/haps/e2e-test-jingmo.hap",
+      "sha256": "46c1fddbf4d1f96c4cd7a0be7b47fd206519f2cf4cebc7d0dcdb3e3f12eb9fb4",
+      "sizeBytes": 2601716,
+      "keywords": [
+        "诗词",
+        "测试",
+        "e2e"
+      ],
+      "category": "阅读"
     }
   ]
 }

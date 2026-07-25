@@ -3,12 +3,16 @@ name: intake-投稿
 # 全自动止于开 PR：合并权（内容关）留人工，护城河不丢。
 on:
   issues:
-    types: [opened, labeled]
+    types: [opened]   # 表单在 opened 时已带「投稿」label；不监听 labeled，避免 opened+labeled 双触发同分支 race
 
 permissions:
   contents: write
   pull-requests: write
   issues: write
+
+concurrency:            # 同一 issue 只跑一个 intake，互不抢分支
+  group: intake-${{ github.event.issue.number }}
+  cancel-in-progress: false
 
 jobs:
   intake:
@@ -64,7 +68,7 @@ jobs:
           git checkout -b "$BR"
           git add "haps/${ID}.hap" index.json
           git commit -m "投稿收录 ${ID} (closes #${ISSUE})"
-          git push -u origin "$BR"
+          git push -u origin "$BR" --force   # 分支按 issue 唯一，重跑幂等
           gh pr create --base main --head "$BR" \
             --title "投稿收录 ${ID}" \
             --body "自动生成自 #${ISSUE}。已机检通过：license 白名单 / HAP 合法 / 包名一致 / sha256+大小核对。**请站长过内容关（非破解 · 非成人 · 有权再分发）后合并；合并即上站。**"

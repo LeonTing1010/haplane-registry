@@ -71,5 +71,5 @@ jobs:
           git push -u origin "$BR" --force   # 分支按 issue 唯一，重跑幂等
           gh pr create --base main --head "$BR" \
             --title "投稿收录 ${ID}" \
-            --body "自动生成自 #${ISSUE}。已机检通过：license 白名单 / HAP 合法 / 包名一致 / sha256+大小核对。**请站长过内容关（非破解 · 非成人 · 有权再分发）后合并。** HAP 走 jsDelivr 镜像 GitHub，合并即可下载，无需同步 Gitee。"
+            --body "自动生成自 #${ISSUE}。已机检通过：license 白名单 / HAP 合法 / 包名一致 / sha256+大小核对。**请站长过内容关（非破解 · 非成人 · 有权再分发）后合并。** ⚠ 下载走 gitee raw：合并后须在本地同步 Gitee（fetch github main → push 到 gitee main），否则大陆用户下载 404。"
           gh issue comment "$ISSUE" --body "✅ 已机检通过并开好 PR，等站长过内容关合并。合并后即可 npx -y haplane deploy --app ${ID} 安装。"
